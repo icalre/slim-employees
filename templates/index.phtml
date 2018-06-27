@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Prueba el comercio</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Empleados
+                                <a href="/" class="btn btn-info float-right">Todos</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="col-sm-8">
+                                    <form action="" method="GET" class="form-inline">
+                                        <div class="form-group mx-sm-3 mb-2">
+                                            <label for="inputPassword2" class="sr-only">Password</label>
+                                            <input type="text" name="email" class="form-control" id="inputPassword2" placeholder="Email">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+                                    </form>
+                                </div>
+                                <br>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 45px"></th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Position</th>
+                                            <th>Salary</th>
+                                            <th style="width: 40px"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($employees as $employee) { ?>
+                                        <tr>
+                                            <td>
+                                                <?= $i++; ?>
+                                            </td>
+                                            <td>
+                                                <?= $employee->name; ?>
+                                            </td>
+                                            <td>
+                                                <?= $employee->email; ?>
+                                            </td>
+                                            <td>
+                                                <?= $employee->position; ?>
+                                            </td>
+                                            <td>
+                                                <?= $employee->salary; ?>
+                                            </td>
+                                            <td>
+                                                <a href="show/<?= $employee->id; ?>" class="btn btn-info">
+                                                    Ver
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php }?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
